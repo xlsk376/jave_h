@@ -1,4 +1,4 @@
-package H2_메서드2_알고리즘;
+package H3_메서드리턴1_알고리즘;
 
 import java.util.Scanner;
 
@@ -24,7 +24,7 @@ import java.util.Scanner;
  * ----------------------
  * 매출액 : 24000원
  */
-// 메뉴출력, 예매현황출력, 좌석선택, 예매계산
+
 class Theater {
 
 	int[] seat = new int[10];
@@ -52,7 +52,6 @@ class Theater {
 
 	void choiceSeat() {
 		// 좌석 현황 출력하기
-
 		System.out.print("좌선번호를 선택하세요[1 ~ 10] : ");
 		int idx = scan.nextInt() - 1;
 
@@ -69,9 +68,10 @@ class Theater {
 		money = cnt * 12000;
 		System.out.println("총 매출 금액 = " + money + "원");
 	}
+
 }
 
-public class H2_메서드2_알고리즘_예매_정답 {
+public class H3_메서드리턴1_평가문제_예매_리턴없음 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		Theater megabox = new Theater();

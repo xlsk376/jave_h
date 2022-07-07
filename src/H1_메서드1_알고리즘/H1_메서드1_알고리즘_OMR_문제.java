@@ -14,6 +14,8 @@ import java.util.Random;
  * 정오표     = {O, X, O, X, X}
  * 성적        = 40점
  */
+
+// 답안 작성, 나의 답안 작성, 답안 비교 및 성적출력
 class ScoreMng{
 	
 	Random ran = new Random();

@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 //# 틱택토
 
+// 게임설정(초기화), 게임화면출력, 인덱스 선택, 승리경우 - 가로, 세로, 대각선, 게임진행
 class TicTacToe{
 	
 	Scanner scan = new Scanner(System.in);

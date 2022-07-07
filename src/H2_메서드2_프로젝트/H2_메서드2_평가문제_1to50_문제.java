@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-
+//숫자 세팅, 카드섞기, 카드현황출력, 카드선택, 게임진행
 class SpeedGame {
 
 	Scanner scan = new Scanner(System.in);

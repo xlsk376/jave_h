@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 //# 사다리 게임
-
+// 사다리 출력, 사다리 이동, 메뉴설정, 게임진행
 class LadderGame {
 
 	Scanner scan = new Scanner(System.in);

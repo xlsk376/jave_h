@@ -1,4 +1,4 @@
-package H1_메서드1_프로젝트;
+package H3_메서드리턴1_알고리즘;
 
 import java.util.Scanner;
 
@@ -9,11 +9,10 @@ import java.util.Scanner;
  * 3. 숫자 2를 입력하면, 캐릭터가 오른쪽으로이동한다.
  * 4. 좌우 끝에 도달했을 때 에러가 발생하지 않도록 예외처리를 해준다.
  */
-// 플레이현황출력, 메뉴출력, 왼쪽이동, 오른쪽이동, 게임진행
+
 class NumberGame{
 	
 	Scanner scan = new Scanner(System.in);
-
 	int[] move = {0, 0, 0, 0, 8, 0, 0, 0, 0, 0};
 	int player = 4;
 	
@@ -24,15 +23,37 @@ class NumberGame{
 		}
 		System.out.println();
 	}
-	
-	void showMenu() {
-		System.out.println("1.좌로 이동");
-		System.out.println("2.우로 이동");
-		System.out.println("3.종료하기");
+	boolean checkSelect(int sel) {
+		if(sel >= 0 || sel <= 2) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
+	void showMenu() {
+		System.out.println(player);
+		System.out.print("0.종료하기");
+		System.out.print("1.좌로 이동");
+		System.out.print("2.우로 이동");	
+		System.out.print(": ");
+	}
+	boolean moveLeftCheck() {
+		if(player > 0 ) {
+			return true;
+		}else {
+			return false;
+		}
+	}
+	boolean moveRightCheck() {
+		if(player < move.length-1 ) {
+			return true;
+		}else {
+			return false;
+		}
+	}
 	void moveLeft() {
-		if(player > 0) {
+		if(moveLeftCheck() == true) {
 			move[player] = 0;
 			move[player - 1] = 8;
 			player -= 1;
@@ -42,7 +63,7 @@ class NumberGame{
 	}
 	
 	void moveRight() {
-		if(player < move.length - 1) {
+		if(moveRightCheck() == true) {
 			move[player] = 0;
 			move[player + 1] = 8;
 			player += 1;
@@ -58,24 +79,25 @@ class NumberGame{
 			// 메뉴 출력
 			showMenu();
 			// 메뉴 선택
-			System.out.print(": ");
-			int choice = scan.nextInt();
 			
+			int sel = scan.nextInt();
+			if(checkSelect(sel) == false) {
+				System.out.println("[잘못된번호]");
+				continue;
+			}
 			// 좌로 이동
-			if(choice == 1) { moveLeft(); }
+			if(sel == 1) { moveLeft(); }
 			// 우로 이동
-			else if(choice == 2) { moveRight(); }
+			else if(sel == 2) { moveRight(); }
 			// 종료
-			else if(choice == 3) {
+			else if(sel == 0) {
 				System.out.println("게임 종료");
 				break;
 			}
 		}
 	}
 }
-
-
-public class H1_메서드1_프로젝트_숫자이동_정답 {
+public class H3_메서드리턴1_알고리즘_숫자이동_정답 {
 	public static void main(String[] args) {
 
 		NumberGame g = new NumberGame();

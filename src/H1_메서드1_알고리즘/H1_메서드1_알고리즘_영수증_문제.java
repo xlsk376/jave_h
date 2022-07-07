@@ -8,7 +8,7 @@ import java.util.Scanner;
  * 2. 출력내용은 각 메뉴의 주문 수량과 총 금액 및 잔돈을 표시한다.
  */
 
-
+// 메뉴출력, 메뉴선택, 영수증출력
 class BurgerShop{
 	
 	Scanner scan = new Scanner(System.in);
